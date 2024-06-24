@@ -2,10 +2,11 @@
   "name": "api-bakery",
   "version": "1.0.0",
   "description": "API developed with express.js",
-  "main": "index.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./js/api_rest/app.js"
+    "dev": "nodemon ./app.js"
   },
   "keywords": [],
   "author": "",
