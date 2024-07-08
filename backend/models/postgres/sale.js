@@ -12,6 +12,9 @@ const pool = new Pool({
     database: config.db.database,
     password: config.db.password,
     port: config.db.port,
+    ssl: {
+        rejectUnauthorized: false, // Opción para evitar errores de certificado no confiable (NO RECOMENDADO para producción)
+    },
 });
 
 export class SalesModel {
