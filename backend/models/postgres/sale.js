@@ -1,6 +1,9 @@
-import { Pool } from 'pg';
 import { fetchWeatherData } from '../../utils/utils.js';
 import { config } from '../../config/config.js';
+import pg from 'pg';
+
+const { Pool } = pg;
+
 
 // Configuración de conexión para PostgreSQL
 const pool = new Pool({
