@@ -1,11 +1,11 @@
 import express, { json } from 'express'
-import { breadsRouter } from  './backend/routes/breads.js'
+import { salesRouter } from  './backend/routes/sales.js'
 
 const app = express()
 app.use(json())
 app.disable('x-powered-by')
 
-app.use('/breads', breadsRouter)
+app.use('/sales', salesRouter)
 
 const PORT = process.env.PORT ?? 1234
 
