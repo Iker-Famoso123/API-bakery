@@ -75,6 +75,8 @@ export class SalesModel {
                 Visibility.Metric.Value
             ];
 
+            console.log("Presipitacion:", HasPrecipitation)
+
             const client = await pool.connect();
             try {
                 const result = await client.query(query, values);
