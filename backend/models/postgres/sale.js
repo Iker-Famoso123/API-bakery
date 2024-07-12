@@ -5,7 +5,7 @@ import pg from 'pg';
 const { Pool } = pg;
 
 
-// Configuración de conexión para PostgreSQL
+// Configuración de conexión 
 const pool = new Pool({
     user: config.db.user,
     host: config.db.host,
@@ -75,7 +75,6 @@ export class SalesModel {
                 Visibility.Metric.Value
             ];
 
-            console.log("Presipitacion:", HasPrecipitation)
 
             const client = await pool.connect();
             try {

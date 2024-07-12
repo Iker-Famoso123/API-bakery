@@ -1,8 +1,10 @@
 import express, { json } from 'express'
 import { salesRouter } from  './backend/routes/sales.js'
+import { corsMiddleware } from './backend/middlewares/cors.js'
 
 const app = express()
 app.use(json())
+app.use(corsMiddleware())
 app.disable('x-powered-by')
 
 app.use('/sales', salesRouter)

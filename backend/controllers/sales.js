@@ -1,4 +1,4 @@
-import { SalesModel } from '../models/postgres/sale.js'
+import { SalesModel } from '../models/mysql/sale.js'
 
 export class SalesController {
     static async getAll (req, res) {
@@ -12,8 +12,8 @@ export class SalesController {
 
     static async create (req, res) {
         const result = req.body
-
-        const newSale = await SalesModel.create({ input: result.data })
+        console.log("ResInput:", result)
+        const newSale = await SalesModel.create({ input: result })
 
         res.status(201).json(newSale)
 
