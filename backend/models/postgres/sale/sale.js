@@ -51,15 +51,15 @@ export class SalesModel {
             const dayOfWeek = new Intl.DateTimeFormat('en-US', options).format(new Date())
     
             const currentDate = new Date().toISOString().split('T')[0]
-            const queryHolidays = 'SELECT * FROM Holidays WHERE date = ?'
-            const [checkIsHoliday] = await connection.execute(queryHolidays, [currentDate])
+            const queryHolidays = 'SELECT * FROM Holidays WHERE date = $1'
+            const [checkIsHoliday] = await client.query(queryHolidays, [currentDate])
             const isHoliday = checkIsHoliday.length > 0
     
             const saleId = await insertSaleData(client, dateTime, weatherId, dayOfWeek, isHoliday, totalValue)
     
             await insertSaleDetails(client, saleId, filteredItems)
 
-            return 
+
     
         } catch (error) {
             console.error('Error creating sale:', error)
