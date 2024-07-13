@@ -1,4 +1,4 @@
-import { SalesModel } from '../models/mysql/sale/sale.js'
+import { SalesModel } from '../models/postgres/sale/sale.js'
 
 export class SalesController {
     static async getAll (req, res) {
