@@ -52,8 +52,8 @@ export class SalesModel {
     
             const currentDate = new Date().toISOString().split('T')[0]
             const queryHolidays = 'SELECT * FROM Holidays WHERE date = $1'
-            const [checkIsHoliday] = await client.query(queryHolidays, [currentDate])
-            const isHoliday = checkIsHoliday.length > 0
+            const checkIsHoliday = await client.query(queryHolidays, [currentDate])
+            const isHoliday = checkIsHoliday.rows.length > 0
     
             const saleId = await insertSaleData(client, dateTime, weatherId, dayOfWeek, isHoliday, totalValue)
     
