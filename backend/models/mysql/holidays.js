@@ -1,5 +1,5 @@
 import mysql from 'mysql2/promise'
-import { config } from '../config/config.js'
+import { config } from '../../config/config.js'
 
 
 const now = new Date()
@@ -13,7 +13,7 @@ async function insertHolidays(holidays) {
 
     for (const holiday of holidays) {
         const { name, date} = holiday
-        await connection.execute(query, [date, name])
+        await connection.execute(query, [date, name])   
     }
 
     await connection.end()
